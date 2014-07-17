@@ -1,7 +1,9 @@
 mozilla-syncserver-dockerfile
 =============================
 
-This is a dockerfile to build and run Mozilla SyncServer within a docker container
+This is a dockerfile to build and run Mozilla SyncServer within a docker container based on a centos base image
+
+The Dockerfile (and this content) is based on https://github.com/acaranta/mozilla-syncserver-dockerfile
 
 It is based on https://github.com/mozilla-services/syncserver 
 
