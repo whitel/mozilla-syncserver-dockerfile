@@ -1,14 +1,17 @@
 # VERSION 0.1
-# DESCRIPTION:    mozilla syncserver conatiner
-# TO_BUILD:       docker build -rm -t synserver .
+# Derived from ubuntu version by Arthur Caranta "arthur+code.mozillasyncdocker@caranta.com" found at 
+# https://github.com/acaranta/mozilla-syncserver-dockerfile
+# DESCRIPTION:    mozilla syncserver container
+# TO_BUILD:       docker build -rm -t syncserver .
 # TO_RUN:         docker run -p 5000:5000 syncserver
+I AM BROKEN
+FROM centos
+MAINTAINER Langdon White "langdon+code.mozillasyncdocker@fishjump.com"
 
-FROM ubuntu:14.04
-MAINTAINER Arthur Caranta "arthur+code.mozillasyncdocker@caranta.com"
-
-
-RUN apt-get -y update
-RUN apt-get install -y git build-essential python-virtualenv python2.7-dev
+RUN yum -y update
+RUN yum install -y centos-release-SCL
+RUN yum -y install git scl-utils python-virtualenv python27
+RUN yum clean all
 
 RUN git clone https://github.com/mozilla-services/syncserver.git 
 RUN cd syncserver && make build
